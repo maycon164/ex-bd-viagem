@@ -11,41 +11,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ViagemDao;
-import model.ViagemDescricao;
+import model.OnibusDescricao;
 import persistence.GenericDao;
 
-@WebServlet("/viagemdesc")
-public class ViagemServlet extends HttpServlet {
+@WebServlet("/onibusdesc")
+public class OnibusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public ViagemServlet() {
-        super();     
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public OnibusServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("Entrou no Servlet!!!!");
 		String idParam = request.getParameter("codigo");
 		int id = Integer.parseInt(idParam);
-		
+
 		ViagemDao vd = new ViagemDao(new GenericDao());
-	
+
 		try {
-			
-			ViagemDescricao viagemDesc = vd.getViagemDescricao(id);
-			RequestDispatcher rd = request.getRequestDispatcher("viagem.jsp");
-			request.setAttribute("viagemDesc", viagemDesc);
+
+			OnibusDescricao onibusDescricao = vd.getOnibusDescricao(id);
+			RequestDispatcher rd = request.getRequestDispatcher("onibus.jsp");
+			request.setAttribute("onibusDesc", onibusDescricao);
 			rd.forward(request, response);
-			
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

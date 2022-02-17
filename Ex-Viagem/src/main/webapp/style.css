@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.form{
+	width: 200px;
+}
+
+
+.center{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.espacamento-top{
+	margin-top:10px;
+}

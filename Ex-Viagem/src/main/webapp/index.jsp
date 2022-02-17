@@ -1,18 +1,19 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>VIAGEM</title>
+<title>Insert title here</title>
 </head>
-
 <body>
 	<h1>
-		VIAGEM AO FIM DO MUNDO...!!!
+		ATIVIDADE SERVLET JAVA E BANCO DE DADOS
 	</h1>
 	
+	<div>
+		<a href="onibus.jsp">ONIBUS</a>
+		<a href="viagem.jsp">VIAGEM</a>
+	</div>
 </body>
-
 </html>
